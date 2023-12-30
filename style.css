@@ -1,0 +1,81 @@
+html {
+    height: 100vh;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;;
+}
+
+body {
+  font-size: 16px;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(185, 181, 181);
+    height: 80vh; 
+    width: 30vw;
+    margin: 0 auto;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+
+}
+
+#screen {
+    background-color: azure;
+    height: 15vh;
+    width: 23vw;
+    margin-top: 2vh;
+    margin: 2vh auto 0 auto;
+}
+
+#solar-panel {
+    background-color: rgb(143, 142, 118);
+    height: 5vh;
+    width: 10vw;
+    margin-top: 2vw;
+    margin-left: 19vw;
+
+}
+
+#erase {
+    display: flex;
+    flex-direction: row;
+  
+    width: 23vw;
+    height: 7vh;
+    margin: 2vh auto;
+    justify-content: space-between;
+    
+}
+
+#clear, #delete {
+    font-size: 1.6rem;
+    display:flex;
+    align-items: center;
+    background-color: wheat;
+    height: 7vh;
+    width: 10vw;
+    text-align: center;
+    justify-content: space-around;
+
+}
+
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: 23vw;
+    height: 38vh;
+    margin: 0 auto;
+}
+
+.button {
+    border: solid black 1px;
+    background-color: azure;
+    width: 5vw;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
