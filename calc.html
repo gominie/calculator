@@ -4,34 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="calculator">
       <div id="solar-panel"></div>
-      <div id="screen"></div>
+      <div id="screen">
+        <div id="previous"></div>
+        <div id="current"></div>
+      </div>
       <div id="erase">
         <div class="erased" id="clear">Clear</div>
         <div class="erased" id="delete">Delete</div>
       </div>
       <div id="buttons">
-        <div class="button">7</div>
-        <div class="button">8</div>
-        <div class="button">9</div>
-        <div class="button">÷</div>
-        <div class="button">4</div>
-        <div class="button">5</div>
-        <div class="button">6</div>
-        <div class="button">X</div>
-        <div class="button">1</div>
-        <div class="button">2</div>
-        <div class="button">3</div>
-        <div class="button">-</div>
-        <div class="button">0</div>
-        <div class="button">.</div>
-        <div class="button">=</div>
-        <div class="button">+</div>
+        <div class="button number">7</div>
+        <div class="button number">8</div>
+        <div class="button number">9</div>
+        <div class="button operator" id="divide">÷</div>
+        <div class="button number">4</div>
+        <div class="button number">5</div>
+        <div class="button number">6</div>
+        <div class="button operator" id="multiply">×</div>
+        <div class="button number">1</div>
+        <div class="button number">2</div>
+        <div class="button number">3</div>
+        <div class="button operator" id="minus">-</div>
+        <div class="button number">0</div>
+        <div class="button" id="decimal">.</div>
+        <div class="button" id="equals">=</div>
+        <div class="button operator" id="add">+</div>
       </div>
     </div>
   </body>
