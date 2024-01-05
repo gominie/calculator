@@ -61,12 +61,13 @@ let numbers = document.querySelectorAll(".number");
 let equals = document.getElementById("equals");
 let decimal = document.getElementById("decimal");
 let clear = document.getElementById("clear");
-let erase = document.getElementById("erase");
+let x = document.getElementById("delete");
 let operator = document.querySelectorAll(".operator");
-let equalValue = "";
+
 let dynamicValue = "0";
 let firstNum = "";
 let secondNum = "";
+let result = ""
 let operatorSelected = false;
 let dynamicScreen = document.getElementById("previous");
 
@@ -108,39 +109,46 @@ function handleOperator(op) {
   dynamicScreen.innerHTML = firstNum + " " + operator;
 }
 
+//erases screen
 clear.addEventListener("click", function () {
   dynamicValue = "0";
   operatorSelected = false
-  dynamicScreen.textContent = dynamicValue;
+  dynamicScreen.innerHTML = dynamicValue;
 });
 
-/* erase.addEventListener("click", function () {
+//delete by char
+erase.addEventListener("click", function () {
   handleErase();
-  currentScreen.innerHTML = dynamicValue;
-}); */
+  dynamicScreen.innerHTML = dynamicValue;
+}); 
 
 function handleErase() {
-  if (dynamicValue.length > 0) {
-    //let lastChar = dynamicValue.charAt(dynamicValue.length-1);
-    dynamicValue = dynamicValue.slice(0, -1);
-
-    /* if(!isNaN(lastChar)) {
-    dynamicValue = dynamicValue.slice(0,-1)
-  } */
+   if (secondNum.length > 0) {
+    secondNum = secondNum.slice(0,-1);
+   dynamicValue = firstNum + " " + operator + " " + secondNum
+   } else if (operator.length > 0) {
+    operator = "";
+    dynamicValue = firstNum;
+   } else if (firstNum.length > 0) {
+    firstNum = firstNum.slice(0,-1);
+    dynamicValue = firstNum || "0"
+   }
   }
-}
+
+
+ equals.addEventListener("click", function () {
+  handleEquals();
+  dynamicScreen.innerHTML = result;
+}); 
+
 
 function handleEquals() {
-  dynamicValue = operate(previousValue, operator, dynamicValue);
+  result = operate(firstNum, operator, secondNum);
   operator = "";
-  previousValue = "";
+  secondNum = "";
+  firstNum = "";
+  dynamicValue = "";
 }
-
-/* equals.addEventListener("click", function () {
-  handleEquals();
-  currentScreen.innerHTML = dynamicValue;
-  dynamicScreen.innerHTML = previousValue;
-}); */
 
 //function calculate(){
 //previousValue = Number(previousValue);
