@@ -10,22 +10,12 @@ function subtract(a, b) {
 
 function divide(a, b) {
   numb = a / b;
-  return +numb.toFixed(4)
+  return +numb.toFixed(4);
 }
 
 function multiply(a, b) {
   numb = a * b;
-  return +numb.toFixed(4)
-}
-
-
-function factorial(n) {
-  if (n === 0) return 1;
-  let product = 1;
-  for (let i = n; i > 0; i--) {
-    product *= i;
-  }
-  return product;
+  return +numb.toFixed(4);
 }
 
 function operate(a, operator, b) {
@@ -39,7 +29,7 @@ function operate(a, operator, b) {
     case "×":
       return multiply(a, b);
     case "÷":
-      if (b === 0) return null;
+      if (b === 0) return "can't divide by zero ";
       else return divide(a, b);
     default:
       return null;
@@ -79,7 +69,7 @@ function handleNumber(num) {
   if (resultGiven) {
     dynamicValue = result;
     firstNum = result;
-    
+
     resultGiven = false;
   } else if (num === "." && dynamicValue === "0") {
     dynamicValue = "0.";
@@ -95,7 +85,9 @@ function handleNumber(num) {
   if (!operatorSelected) {
     firstNum = dynamicValue;
   } else {
-    secondNum += num;
+    if (secondNum === "" && num === ".") {
+      secondNum = "0.";
+    } else secondNum += num;
     dynamicScreen.innerHTML = firstNum + " " + operator + " " + secondNum;
   }
 }
