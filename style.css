@@ -18,7 +18,7 @@ body {
     margin: 0 auto;
     margin-top: 10vh;
     margin-bottom: 10vh;
-
+    border-radius: 2%;
 }
 
 #screen {
@@ -30,25 +30,39 @@ body {
     font-size: 5em;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+    border-radius: 2%;
+    text-align: right;
 }
 
-#previous {
-    font-size: 20px;
+#calculation{
+    font-size: 0.3em;
+   background-color: blue;
+    width: 100%;
+    height: 100%;
+  
 }
 
-#current {
-    font-size: 30px;
+#result {
+    font-size: 0.6em;
+    width: 100%;
+    height: 100%;
+    background-color: brown;
 }
 
 #solar-panel {
+    display: flex;
+    flex-direction: row;
     background-color: rgb(143, 142, 118);
     height: 5vh;
     width: 10vw;
     margin-top: 2vw;
     margin-left: 19vw;
 
+}
+
+.box{
+    border: 0.1em black solid;
+    flex-grow: 1;
 }
 
 #erase {
@@ -71,7 +85,7 @@ body {
     width: 10vw;
     text-align: center;
     justify-content: space-around;
-
+    border-radius: 4%;
 }
 
 #buttons {
@@ -91,4 +105,5 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10%;
 }
